@@ -1,14 +1,18 @@
 import React from 'react'
 import Form from './Form'
 
-class App extends component {
+class App extends React.Component {
   render() {
   return (
-    <div className="App">
+    <React.Fragment>
+    <div className="App"/>
     < Form />
     <div/>
-  )
-}}
+    </React.Fragment>
+    )
+  }
+}
+
 
 export default App
 
