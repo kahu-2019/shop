@@ -1,10 +1,14 @@
 import React from 'react'
+import Form from './Form'
 
-const App = () => {
+class App extends component {
+  render() {
   return (
-    <h1>React development has begun!</h1>
+    <div className="App">
+    < Form />
+    <div/>
   )
-}
+}}
 
 export default App
 
