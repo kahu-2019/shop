@@ -7,7 +7,7 @@ function getAllListings(db = connection){
 }
 
 function getListing(id, db = connection){
-    return db('clothes').select().where('id', id)
+    return db('clothes').select().where('id', id).first()
 }
 
 module.exports = {
