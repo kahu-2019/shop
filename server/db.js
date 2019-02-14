@@ -2,15 +2,15 @@ const environment = process.env.NODE_ENV || 'development'
 const config = require('../knexfile')[environment]
 const connection = require('knex')(config)
 
-function getAllItems(db = connection){
+function getAllListings(db = connection){
     return db('clothes').select()
 }
 
-function getItem(id, db = connection){
+function getListing(id, db = connection){
     return db('clothes').select().where('id', id)
 }
 
 module.exports = {
-    getAllItems,
-    getItem
+    getAllListings,
+    getListing
 }
