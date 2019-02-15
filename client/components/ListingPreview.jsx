@@ -1,5 +1,4 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
 
 class ListingPreview extends React.Component{
     constructor(props){
@@ -25,6 +24,7 @@ class ListingPreview extends React.Component{
                         <h6>{this.state.description}</h6>
                         <br />
                         <h5>{this.state.price}</h5>
+                        <button className='btn btn-outline-primary float-right'>Add to cart</button>
                     </div>
             </div>
             <hr />
