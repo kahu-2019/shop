@@ -1,6 +1,7 @@
 import React from 'react'
 import {HashRouter as Router, Route} from 'react-router-dom'
 
+import Header from './Header'
 import Form from './Form'
 import Listings from './Listings'
 
@@ -13,8 +14,9 @@ class App extends React.Component {
     return (
         <Router>
             <div>
+                <Header />
             {/* < Form /> */}
-            <Route exact path='/listings' component={Listings} />
+            <Listings />
           </div>
         </Router>
     )

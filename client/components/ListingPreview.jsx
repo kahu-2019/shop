@@ -9,7 +9,8 @@ class ListingPreview extends React.Component{
             id:    this.props.id,
             title: this.props.title,
             image: this.props.image,
-            price: `$${this.props.price}`
+            price: `$${this.props.price}`,
+            description: this.props.description
         }
     }
 
@@ -20,8 +21,10 @@ class ListingPreview extends React.Component{
                         <img className='img-thumbnail' style={{height:'15vw'}} src={this.state.image} alt="Clock Image" />
                     </div>
                     <div className='col-9'>
-                        <h3><Link to={`/listing/${this.state.id}`}>{this.state.title}</Link></h3>
-                        <h4>{this.state.price}</h4>
+                        <h3>{this.state.title}</h3>
+                        <h6>{this.state.description}</h6>
+                        <br />
+                        <h5>{this.state.price}</h5>
                     </div>
             </div>
             <hr />
