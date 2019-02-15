@@ -1,10 +1,15 @@
 import React from 'react'
+import Cart from './cart'
 
 const App = () => {
   return (
-    <h1>React development has begun!</h1>
+    <div>
+  
+    
+    <Cart/>
+    </div>
   )
-}
+} 
 
 export default App
 
