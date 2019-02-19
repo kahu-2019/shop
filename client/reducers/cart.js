@@ -4,7 +4,14 @@ const initialState = []
 function reducer(state = initialState, action){
   switch (action.type) {
     case ADD_TO_CART:
-      return [...state, {...action.item, quantity:1}]
+      let existingItem = state.find(item => item.id == action.item.id)
+      console.log(existingItem)
+      if (existingItem) {
+        existingItem.quantity++
+        return [...state]
+      } else {
+        return [...state, {...action.item, quantity: 1}]
+      }
     default:
       return state
   }
