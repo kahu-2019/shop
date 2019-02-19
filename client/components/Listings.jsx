@@ -13,8 +13,8 @@ class Listings extends React.Component {
 
   componentDidMount(){
     getAllListings()
-        .then(nweListings => {
-            this.setState({listings: nweListings})
+        .then(newListings => {
+            this.setState({listings: newListings})
         })
   }
   
