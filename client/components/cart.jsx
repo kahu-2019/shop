@@ -20,14 +20,14 @@ addItem(item) {
     render () {
     return <div className='cart'>
         <ul>
-            {this.props.cart.map(item => {
+            {this.props.cart.map((item, i) => {
                 return (
-                    <li> {item.name} + {item.quantity}</li>
+                    <li key={i}> {item.name} + {item.quantity}</li>
 
                 )
             })}
             <li>
-                <button onclick={() => this.addItem()}>hello</button>
+                <button onClick={() => this.addItem()}>hello</button>
 
             </li>
         </ul>
