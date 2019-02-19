@@ -1,25 +1,12 @@
 import React from 'react'
+import {connect} from 'react-redux'
+
 import {getAllListings} from '../api'
 import ListingPreview from './ListingPreview';
 
 class Listings extends React.Component {
-  constructor(props){
-    super(props)
-
-    this.state = {
-        listings: undefined
-    }
-  }
-
-  componentDidMount(){
-    getAllListings()
-        .then(newListings => {
-            this.setState({listings: newListings})
-        })
-  }
-  
   render() {
-    let {listings} = this.state
+    let {listings} = this.props
     return (<div className="container">
         {listings && (
             listings.map((listing, index) => 
@@ -30,6 +17,12 @@ class Listings extends React.Component {
   }
 }
 
+function mapStateToProps(state) {
+  return {
+    listings: state.listings
+  }
+}
 
-export default Listings
+
+export default connect(mapStateToProps)(Listings)
 

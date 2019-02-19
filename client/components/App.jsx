@@ -1,5 +1,8 @@
 import React from 'react'
 import {HashRouter as Router, Route} from 'react-router-dom'
+import {connect} from 'react-redux'
+
+import {fetchListings} from '../actions'
 
 import Header from './Header'
 import Form from './Form'
@@ -9,6 +12,10 @@ import Cart from './cart'
 class App extends React.Component {
   constructor(props){
     super(props)
+  }
+
+  componentDidMount() {
+    this.props.fetchListings()
   }
   
   render() {
@@ -25,6 +32,13 @@ class App extends React.Component {
   }
 }
 
+function mapDispatchToProps(dispatch) {
+  return {
+    fetchListings: () => {
+      dispatch(fetchListings())
+    }
+  }
+}
 
-export default App
+export default connect(undefined, mapDispatchToProps)(App)
 
