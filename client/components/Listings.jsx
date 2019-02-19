@@ -8,10 +8,8 @@ class Listings extends React.Component {
   render() {
     let {listings} = this.props
     return (<div className="container">
-        {listings && (
-            listings.map((listing, index) => 
+        {listings.map((listing, index) => 
             <ListingPreview key={index} id={listing.id} title={listing.title} image={listing.image} description={listing.description} price={listing.price} />
-            )
         )}
     </div>)
   }
