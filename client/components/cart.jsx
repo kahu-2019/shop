@@ -2,41 +2,17 @@ import React from 'react'
 import {connect} from 'react-redux'
 
 class Cart extends React.Component {
-    constructor (props) {
-        super (props)
-        this.state = {
-            items:[{
-            name: 'tshirt', quantity:5}]}
-    }
-
-addItem(item) {
-    store.dispatch({
-        type: 'ADD_ITEM',
-        item 
-    
-    })
-}  
-
     render () {
-    return <div className='cart'>
+      let {cart} = this.props
+      let total = cart.reduce((acc,item) =>  {
+        return acc + item.price * item.quantity
+      }, 0)
+      return <div className='cart'>
         <ul>
-            {this.props.cart.map(item => {
-                return (
-                    <li> {item.name} + {item.quantity}</li>
-
-                )
-            })}
-            <li>
-                <button onclick={() => this.addItem()}>hello</button>
-
-            </li>
+          {cart.map((item, i) => <li key={i}> {item.title} x {item.quantity}</li>)}
         </ul>
-
-
+        Total: ${total}
       </div>
-
-
-        
     }
 }
 
