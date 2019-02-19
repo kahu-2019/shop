@@ -5,7 +5,6 @@ function reducer(state = initialState, action){
   switch (action.type) {
     case ADD_TO_CART:
       let existingItem = state.find(item => item.id == action.item.id)
-      console.log(existingItem)
       if (existingItem) {
         existingItem.quantity++
         return [...state]
